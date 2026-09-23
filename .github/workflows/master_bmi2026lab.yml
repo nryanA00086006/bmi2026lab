@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Test with the dotnet CLI
-        run: dotnet test --no-build
+        run: dotnet test bmi2026labtest/bmi2026labtest.csproj --no-restore
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
