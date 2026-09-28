@@ -27,4 +27,18 @@ public sealed class Test1
 
         Assert.AreEqual(expectedCategory, bmi.BMICategory);
     }
+
+    [TestMethod]
+    public void BMICategory_ReturnsOverweightForOverweightUser()
+    {
+        var bmi = new BMI
+        {
+            WeightStones = 12,
+            WeightPounds = 8,
+            HeightFeet = 5,
+            HeightInches = 8
+        };
+
+        Assert.AreEqual(BMICategory.Overweight, bmi.BMICategory);
+    }
 }
